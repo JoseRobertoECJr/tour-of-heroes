@@ -1,6 +1,6 @@
 //connect to database
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/heroes');
+mongoose.connect('mongodb://localhost/heroes'); //127.0.0.1:27017
 
 
 //get dependencies
