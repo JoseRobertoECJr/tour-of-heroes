@@ -9,7 +9,7 @@ export class HeroService{
 
     constructor(private http: Http) { }
 
-      // Get all posts from the API
+      // Get all heroes from the API
       getAllHeroes() {
         return this.http.get('/api/heroes')
           .map(res => res.json());
