@@ -15,9 +15,4 @@ export class HeroService{
           .map(res => res.json());
       }
 
-/*
-    getHeroes(): void{//Hero[]{
-        //return HEROES;
-    }
-*/
 }

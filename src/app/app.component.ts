@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-      // Retrieve posts from the API
+      // Retrieve heroes from the API
       this.heroService.getAllHeroes().subscribe(heroes => {
         this.heroes = heroes;
       });
