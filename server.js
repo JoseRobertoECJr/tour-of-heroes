@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/heroes'); //127.0.0.1:27017
 
-//promises
+//promises testing
 mongoose.Promise = global.Promise
 
 //get dependencies
