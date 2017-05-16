@@ -17,6 +17,8 @@ import { HeroService } from './services/hero/hero.service';
 })
 export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
+
+  newHeroName: string = '';
   selectedHero: Hero;
   heroes: Hero[];
 
@@ -24,15 +26,23 @@ export class AppComponent implements OnInit {
 
   }
 
+  ngOnInit() {
+      // Retrieve heroes from the API
+      this.heroService.getHeroes().subscribe(heroes => {
+        this.heroes = heroes;
+      });
+    }
+
 
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
   }
 
-  ngOnInit() {
-      // Retrieve heroes from the API
-      this.heroService.getAllHeroes().subscribe(heroes => {
-        this.heroes = heroes;
-      });
-    }
+  createHero(name: string): void{
+    this.heroService.createHero(name).subscribe(hero => {
+      this.heroes.push(hero);
+    });
+    this.newHeroName = '';
+  }
+
 }

@@ -2,6 +2,8 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/heroes'); //127.0.0.1:27017
 
+//promises
+mongoose.Promise = global.Promise
 
 //get dependencies
 const express = require('express');
@@ -10,7 +12,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 
 //get our API routes
-const api = require('./server/routes/api');
+const api = require('./api/routes/api');
 
 const app = express();
 

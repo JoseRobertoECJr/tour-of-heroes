@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 //'/hero routes'
 router.route('/heroes')
 
-    //Create a Heroes (accessed at POST http://localhost:8080/api/heroes)
+    //Create a Hero (accessed at POST http://localhost:8080/api/heroes)
     .post(function(req, res){
         var hero = new Hero();
 
@@ -24,7 +24,7 @@ router.route('/heroes')
             if(err)
                 res.send(err);
 
-            res.json({ message: 'Hero created!' });
+            res.json(hero);
         });
     })
     //Get all the Heroes (accessed at GET http://localhost:3000/api/heroes)
