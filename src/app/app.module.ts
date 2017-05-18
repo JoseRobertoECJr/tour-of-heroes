@@ -15,14 +15,14 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroService } from './services/hero/hero.service'
 
 const ROUTES = [
-  {
+  /*{
     path: '',
     redirectTo: 'heroes',
     pathMatch: 'full'
-  },
+  },*/
   {
     path: 'heroes',
-    component: HeroDetailComponent
+    component: HeroesComponent
   }
 ];
 
