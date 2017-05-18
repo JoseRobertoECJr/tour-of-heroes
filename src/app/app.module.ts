@@ -22,7 +22,7 @@ const ROUTES = [
   },
   {
     path: 'heroes',
-    component: HeroDetailComponent
+    component: HeroesComponent
   }
 ];
 
