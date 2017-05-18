@@ -2,6 +2,9 @@ var fs = require('fs');
 
 function createComponent(componentName){
 
+    //defining dirname
+    var dirname = "./src/app/components/";
+
     //creating componentClassName
     var componentClassName = "";
     var arrayClassName = componentName.split("");
@@ -18,22 +21,22 @@ function createComponent(componentName){
     }
 
     //making directory for my-component
-    fs.mkdirSync("./src/app/components/" + componentName);
+    fs.mkdirSync(dirname + componentName);
 
     //creating all files for my-component
-    fs.writeFile("./src/app/components/" + componentName + "/" + componentName + ".component.html",
-                 "<h1>{{title}}</h1>",
-                 function(err){ if(err){ return console.log(err) } console.log(componentName + "component.html created."); }
+    fs.writeFile(dirname + componentName + "/" + componentName + ".component.html",
+                 "<h2>{{title}}</h2>",
+                 function(err){ if(err){ return console.log(err) } console.log(componentName + ".component.html created."); }
     );
 
-    fs.writeFile("./src/app/components/" + componentName + "/" + componentName + ".component.css",
+    fs.writeFile(dirname + componentName + "/" + componentName + ".component.css",
 `h1{
     color: blue;
 }`,
-                 function(err){ if(err){ return console.log(err) } console.log(componentName + "component.css created."); }
+                 function(err){ if(err){ return console.log(err) } console.log(componentName + ".component.css created."); }
     );
 
-    fs.writeFile("./src/app/components/" + componentName + "/" + componentName + ".component.ts",
+    fs.writeFile(dirname + componentName + "/" + componentName + ".component.ts",
 `import { Component } from '@angular/core';
 
 @Component({
@@ -45,7 +48,7 @@ function createComponent(componentName){
 export class `+ componentClassName +`Component{
     title: string = "`+ componentName +`";
 }`,
-                 function(err){ if(err){ return console.log(err) } console.log(componentName + "component.ts created."); }
+                 function(err){ if(err){ return console.log(err) } console.log(componentName + ".component.ts created."); }
     );
 }
 

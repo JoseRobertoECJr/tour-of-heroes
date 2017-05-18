@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { HeroService } from './../../services/hero/hero.service'
 import { Hero } from './../../models/hero/hero';
 
 
@@ -9,7 +10,6 @@ import { Hero } from './../../models/hero/hero';
 })
 
 export class HeroDetailComponent{
-
-    @Input() hero: Hero;
-
+    @Input()
+    hero: Hero;
 }
