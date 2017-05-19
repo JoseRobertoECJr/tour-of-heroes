@@ -25,7 +25,7 @@ export class HeroService{
         .map(res => res.json());
     }
 
-    getHero(id): Observable<Hero> {
+    getHero(id: string): Observable<Hero> {
         return this.http.get('/api/heroes/' + id )
         .map(res => res.json());
     }
