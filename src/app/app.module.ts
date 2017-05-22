@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 //components
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MiniDetailComponent } from './components/mini-detail/mini-detail.component';
 
 //services
 import { HeroService } from './services/hero/hero.service'
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './modules/app-routing.module';
         AppComponent,
         HeroDetailComponent,
         HeroesComponent,
-        DashboardComponent
+        DashboardComponent,
+        MiniDetailComponent
     ],
     imports: [
         BrowserModule,

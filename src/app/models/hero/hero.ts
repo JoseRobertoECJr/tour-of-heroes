@@ -1,10 +1,10 @@
 export class Hero{
-    public id: number;
+    public _id: number;
     public name: string;
 
     //we could have a constructor or not, but I like constructors ;)
-    constructor(name: string, id?: number){ //optional parameters
-        this.id = id;
+    constructor(name: string, _id?: number){ //optional parameters
+        this._id = _id;
         this.name = name;
     }
 }

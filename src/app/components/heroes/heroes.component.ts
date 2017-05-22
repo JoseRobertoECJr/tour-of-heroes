@@ -17,7 +17,6 @@ import { HeroService } from './../../services/hero/hero.service';
 })
 
 export class HeroesComponent implements OnInit{
-    title: string = "Heroes";
 
     newHeroName: string = '';
     selectedHero: Hero;

@@ -1,5 +1,3 @@
-<h2>{{title}}</h2>
-
 <div>
     <h2>Add a hero</h2>
     <label>name: </label>
@@ -8,7 +6,7 @@
 </div>
 
 <div>
-    <h2>My Heroes</h2>
+    <h2>Heroes</h2>
     <ul class="heroes">
         <li [class.selected]="hero === selectedHero" *ngFor="let hero of heroes" (click)="onSelect(hero)">
             <span class="badge">{{hero._id}}</span>{{hero.name}}
@@ -16,5 +14,5 @@
     </ul>
 </div>
 
-<!--hero-detail [hero]="selectedHero"></hero-detail-->
+<mini-detail [hero]="selectedHero"></mini-detail>
 <router-outlet></router-outlet>
