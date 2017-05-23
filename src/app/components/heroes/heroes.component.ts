@@ -28,9 +28,7 @@ export class HeroesComponent implements OnInit{
 
     ngOnInit() {
         // Retrieve heroes from the API
-        this.heroService.getHeroes().subscribe(heroes => {
-            this.heroes = heroes;
-        });
+        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
     }
 
     onSelect(hero: Hero): void{
