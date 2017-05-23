@@ -11,7 +11,7 @@ import { HeroService } from './../../services/hero/hero.service';
 
 export class AddHeroComponent{
 
-    title: string = "Add hero";
+    title: string = "Add a hero";
     newHeroName: string = '';
 
     constructor(private heroService: HeroService,
