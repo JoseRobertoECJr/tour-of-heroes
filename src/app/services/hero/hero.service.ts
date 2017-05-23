@@ -10,7 +10,8 @@ import { Hero } from './../../models/hero/hero';
 export class HeroService{
 
     heroesApiUrl: string = 'api/heroes/';
-
+    private headers = new Headers({'Content-Type': 'application/json'});
+    private options = new RequestOptions({headers: this.headers});
 
     constructor(private http: Http) { }
 
@@ -26,11 +27,7 @@ export class HeroService{
     }
 
     createHero(name: string) {
-
-        let headers = new Headers({'Content-Type': 'application/json'});
-        let options = new RequestOptions({headers: headers});
-
-        return this.http.post(this.heroesApiUrl, { name }, options)
+        return this.http.post(this.heroesApiUrl, { name }, this.options)
         .map(res => res.json());
     }
 
@@ -42,6 +39,14 @@ export class HeroService{
 
         //return this.http.get('/api/heroes/' + id )
         //.map(res => res.json());
+    }
+
+    updateHero(hero: Hero): Promise<Hero> {
+        return this.http
+        .put(this.heroesApiUrl + hero._id, JSON.stringify(hero), this.options)
+        .toPromise()
+        .then(() => hero)
+        .catch(this.handleError);
     }
 
 
