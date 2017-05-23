@@ -18,7 +18,7 @@ import { HeroService } from './../../services/hero/hero.service';
 
 export class HeroesComponent implements OnInit{
 
-    newHeroName: string = '';
+    title: string = 'Heroes';
     selectedHero: Hero;
     heroes: Hero[];
 
@@ -33,12 +33,5 @@ export class HeroesComponent implements OnInit{
 
     onSelect(hero: Hero): void{
         this.selectedHero = hero;
-    }
-
-    createHero(name: string): void{
-        this.heroService.createHero(name).subscribe(hero => {
-            this.heroes.push(hero);
-        });
-        this.newHeroName = '';
     }
 }

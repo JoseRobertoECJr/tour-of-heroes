@@ -1,12 +1,5 @@
 <div>
-    <h2>Add a hero</h2>
-    <label>name: </label>
-    <input [(ngModel)]="newHeroName" placeholder="name" />
-    <button (click)="createHero(newHeroName)">inserir</button>
-</div>
-
-<div>
-    <h2>Heroes</h2>
+    <h3>{{title}}</h3>
     <ul class="heroes">
         <li [class.selected]="hero === selectedHero" *ngFor="let hero of heroes" (click)="onSelect(hero)">
             <span class="badge">{{hero._id}}</span>{{hero.name}}

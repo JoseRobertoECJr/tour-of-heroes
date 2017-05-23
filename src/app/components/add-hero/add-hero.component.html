@@ -1,0 +1,9 @@
+<div>
+    <h3>{{title}}</h3>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="newHeroName" placeholder="name" />
+    </div>
+    <button (click)="createHero(newHeroName)">Insert</button>
+    <button (click)="goDashboard()">Cancel</button>
+</div>

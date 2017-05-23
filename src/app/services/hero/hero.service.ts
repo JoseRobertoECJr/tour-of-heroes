@@ -26,9 +26,14 @@ export class HeroService{
         //.map(res => res.json());
     }
 
-    createHero(name: string) {
+    createHero(name: string): Promise<Hero> {
         return this.http.post(this.heroesApiUrl, { name }, this.options)
-        .map(res => res.json());
+        .toPromise()
+        .then(res => res.json())
+        .catch(this.handleError);
+
+        //return this.http.post(this.heroesApiUrl, { name }, this.options)
+        //.map(res => res.json());
     }
 
     getHero(id: string): Promise<Hero> {//Observable<Hero> {
