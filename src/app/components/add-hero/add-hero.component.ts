@@ -12,7 +12,6 @@ import { HeroService } from './../../services/hero/hero.service';
 export class AddHeroComponent{
 
     title: string = "Add a hero";
-    newHeroName: string = '';
 
     constructor(private heroService: HeroService,
                 private router: Router){
@@ -28,9 +27,11 @@ export class AddHeroComponent{
     }
 
     createHero(name: string): void{
-        this.heroService.createHero(name).then(hero => {
-            this.goHeroes();
-        });
-        this.newHeroName = '';
+        name.trim();
+        if(name){
+            this.heroService.createHero(name).then(hero => {
+                this.goHeroes();
+            });
+        }
     }
 }

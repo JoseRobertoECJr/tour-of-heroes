@@ -15,6 +15,16 @@ export class HeroService{
 
     constructor(private http: Http) { }
 
+    getHero(id: string): Promise<Hero> {//Observable<Hero> {
+        return this.http.get(this.heroesApiUrl + id)
+        .toPromise()
+        .then(res => res.json() as Hero)
+        .catch(this.handleError);
+
+        //return this.http.get('/api/heroes/' + id )
+        //.map(res => res.json());
+    }
+
     // Get all heroes from the API
     getHeroes(): Promise<Hero[]>{ //Observable<Hero[]> {
         return this.http.get(this.heroesApiUrl)
@@ -36,16 +46,6 @@ export class HeroService{
         //.map(res => res.json());
     }
 
-    getHero(id: string): Promise<Hero> {//Observable<Hero> {
-        return this.http.get(this.heroesApiUrl + id)
-        .toPromise()
-        .then(res => res.json() as Hero)
-        .catch(this.handleError);
-
-        //return this.http.get('/api/heroes/' + id )
-        //.map(res => res.json());
-    }
-
     updateHero(hero: Hero): Promise<Hero> {
         return this.http
         .put(this.heroesApiUrl + hero._id, JSON.stringify(hero), this.options)
@@ -54,6 +54,12 @@ export class HeroService{
         .catch(this.handleError);
     }
 
+    deleteHero(id: string): Promise<void>{
+        return this.http.delete(this.heroesApiUrl + id, this.options)
+        .toPromise()
+        .then(() => null)
+        .catch(this.handleError);
+    }
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only

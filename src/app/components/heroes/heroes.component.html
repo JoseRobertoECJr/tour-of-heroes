@@ -2,7 +2,8 @@
     <h3>{{title}}</h3>
     <ul class="heroes">
         <li [class.selected]="hero === selectedHero" *ngFor="let hero of heroes" (click)="onSelect(hero)">
-            <span class="badge">{{hero._id}}</span>{{hero.name}}
+            <span class="badge">{{hero._id}}</span><span>{{hero.name}}</span>
+            <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
         </li>
     </ul>
 </div>

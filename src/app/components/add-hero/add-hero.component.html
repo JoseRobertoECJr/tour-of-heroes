@@ -3,8 +3,8 @@
     <div>
         <h2>New Hero:</h2>
         <label>name: </label>
-        <input [(ngModel)]="newHeroName" placeholder="name" />
+        <input #newHeroName placeholder="name" />
     </div>
-    <button (click)="createHero(newHeroName)">Insert</button>
+    <button (click)="createHero(newHeroName.value)">Add</button>
     <button (click)="goDashboard()">Cancel</button>
 </div>
