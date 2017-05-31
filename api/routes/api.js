@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //models
-var Hero = require('./../api-models/hero');
+var Hero = require('./../models/hero');
 
 //GET api listing
 router.get('/', (req, res) => {
