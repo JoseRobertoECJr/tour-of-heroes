@@ -18,19 +18,21 @@ export class AddHeroComponent{
 
     }
 
-    goHeroes(): void{
-        this.router.navigateByUrl('/heroes');
+    gotoHeroes(): void{
+        let link = '/heroes';
+        this.router.navigateByUrl(link);
     }
 
-    goDashboard(): void{
-        this.router.navigateByUrl('/dashboard');
+    gotoDashboard(): void{
+        let link = '/dashboard';
+        this.router.navigateByUrl(link);
     }
 
     createHero(name: string): void{
         name.trim();
         if(name){
             this.heroService.createHero(name).then(hero => {
-                this.goHeroes();
+                this.gotoHeroes();
             });
         }
     }

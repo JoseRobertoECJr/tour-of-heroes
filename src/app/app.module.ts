@@ -12,8 +12,9 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MiniDetailComponent } from './components/mini-detail/mini-detail.component';
-
 import { AddHeroComponent } from './components/add-hero/add-hero.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+
 //services
 import { HeroService } from './services/hero/hero.service'
 
@@ -27,7 +28,8 @@ import { AppRoutingModule } from './modules/app-routing.module';
         HeroesComponent,
         DashboardComponent,
         MiniDetailComponent,
-        AddHeroComponent
+        AddHeroComponent,
+        HeroSearchComponent
     ],
     imports: [
         BrowserModule,
