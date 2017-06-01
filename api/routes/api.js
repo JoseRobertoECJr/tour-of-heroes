@@ -93,6 +93,10 @@ router.route('/heroes')
 
           if you send this GET:
           http://localhost:port/api/search?hero[name]=Superman
+          req.query = { hero: { name: 'Superman' } }
+          req.query.hero = { name: 'Superman' }
+          req.query.hero.name = 'Superman'
+
         */
     router.route('/search?')
 
@@ -102,7 +106,7 @@ router.route('/heroes')
                 return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
             }
 
-            const name = escapeRegex(req.query.hero.name);
+            const name = RegExp(escapeRegex(req.query.hero.name), 'gi');
             if(req.query.hero){
                 Hero.find({'name': name }, function(err, heroes){
                     if(err)
@@ -110,7 +114,6 @@ router.route('/heroes')
                     res.json(heroes);
                 });
             }
-            console.log(name);
 
     });
 
