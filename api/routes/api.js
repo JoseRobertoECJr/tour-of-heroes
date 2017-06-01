@@ -88,5 +88,31 @@ router.route('/heroes')
             });
         });
 
+        /*
+          Search route
+
+          if you send this GET:
+          http://localhost:port/api/search?hero[name]=Superman
+        */
+    router.route('/search?')
+
+        .get(function(req, res){
+
+            function escapeRegex(text) {
+                return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+            }
+
+            const name = escapeRegex(req.query.hero.name);
+            if(req.query.hero){
+                Hero.find({'name': name }, function(err, heroes){
+                    if(err)
+                        res.send(err);
+                    res.json(heroes);
+                });
+            }
+            console.log(name);
+
+    });
+
 
 module.exports = router;

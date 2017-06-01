@@ -12,9 +12,8 @@ export class HeroSearchService {
     constructor(private http: Http) {}
 
     search(term: string): Observable<Hero[]> {
-        console.log(term);
         return this.http
-        .get(`api/heroes/?name=${term}`)
+        .get(`api/search?hero[name]=${term}`)
         .map(res => res.json() as Hero[]);
     }
 }
